@@ -14,6 +14,7 @@ import magnolia from './src/utils/magnolia';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+
 /** @type {import('astro').AstroUserConfig} */
 export default defineConfig({
 	site: 'https://stupendous-travesseiro-c8e474.netlify.app',
