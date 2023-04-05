@@ -1,0 +1,58 @@
+---
+const { item = {} } = Astro.props;
+---
+<section>
+	<div class="container container--wide">
+		<div class="justify-center row">
+			<div class="relative pt-8 pl-4 mx-auto my-0 overflow-hidden col basis-1/2 sm:mx-auto sm:mt-20 sm:mb-0">
+				<div class="grid grid-cols-10 grid-rows-6">
+					<div class="relative z-10 col-start-2 row-start-1 row-end-7 col-span-full">
+						<picture>
+							<img
+								src="https://picsum.photos/693/390"
+								width="693"
+								height="390"
+								class="aspect-[16/9]"
+								alt="Describe the image"
+								loading="lazy" />
+						</picture>
+						<a href="#" class="video-grid__trigger">
+							<i class="font-icons icon-play before:ml-1"></i>
+						</a>
+					</div>
+					<div class="relative z-20 flex flex-col justify-around col-start-1 col-end-6 row-start-1 row-end-7 flex-nowrap">
+						<div class="flex flex-col items-start w-auto p-8 bg-white shadow-lg" style="max-width: 350px;">
+							<div class="tagline">BAE Systems</div>
+							<h3 class="relative my-4 text-3xl font-bold media__title font-baeBold before:block before:w-1 before:h-full before:bg-slate-400 before:absolute before:-left-8 ">What we do</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="relative pt-8 pl-4 mx-auto my-0 overflow-hidden col basis-1/2 sm:mx-auto sm:mt-20 sm:mb-0">
+				<div class="grid grid-cols-10 grid-rows-6">
+					<div class="relative z-10 col-start-2 row-start-1 row-end-7 col-span-full">
+						<picture>
+							<img
+								src="https://picsum.photos/693/390"
+								width="693"
+								height="390"
+								class="aspect-[16/9]"
+								alt="Describe the image"
+								loading="lazy" />
+						</picture>
+						<a href="#" class="video-grid__trigger mt">
+							<i class="font-icons icon-play before:ml-1"></i>
+						</a>
+					</div>
+					<div class="relative z-20 flex flex-col justify-around col-start-1 col-end-6 row-start-1 row-end-7 flex-nowrap">
+						<div class="flex flex-col items-start w-auto p-8 bg-white shadow-lg" style="max-width: 350px;">
+							<div class="tagline">Technology</div>
+							<h3 class="relative my-4 text-3xl font-bold media__title font-baeBold before:block before:w-1 before:h-full before:bg-slate-400 before:absolute before:-left-8 ">Multi-domain advantage</h3>
+							<div class="text-sm media__summary">Conflict is about much more than what’s obvious on the battlefield. Both grey zone attacks and new physical threats mean that we need to adapt.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

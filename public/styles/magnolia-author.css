@@ -1,0 +1,22 @@
+/** For nicer editing experience in pages app, make navigation relative **/
+nav {
+	position: relative !important;
+}
+
+.navbar-spacer-children {
+	height: 60px;
+}
+
+.navbar-spacer {
+	height: 0px;
+}
+
+.row div.mgnlEditorBar.component {
+	flex-basis: calc(100% - 15px);
+}
+
+.v-icon,
+.v-errorindicator,
+.v-required-field-indicator {
+	vertical-align: top;
+}

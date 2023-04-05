@@ -1,0 +1,21 @@
+---
+// export interface Props {
+// 	content?: object;
+// 	templateAnnotations?: object;
+// 	area: string;
+// }
+import EditableComment from './EditableComment.astro';
+import NoComponent from './NoComponent.astro';
+import componentMappings from './componentMapping.js';
+const { annotations, item, content } = Astro.props;
+let comment = annotations[item?.['@path']] || '';
+comment = comment.includes('cms:component') ? comment : '';
+const Component = componentMappings[item['mgnl:template']] || NoComponent;
+---
+<EditableComment annotation={comment}>
+<Component
+	content={content}
+	annotations={annotations}
+	item={item}
+/>
+</EditableComment>

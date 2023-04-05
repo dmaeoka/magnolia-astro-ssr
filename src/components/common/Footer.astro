@@ -1,0 +1,46 @@
+---
+
+---
+<footer class="px-4 pt-12 pb-0 mega-footer text-neutral-100 bg-[#1e1e1e]">
+	<div class="container">
+		<div class="items-start justify-between -mx-4 row">
+			<div class="relative w-full px-4 md:w-1/3 footer__left md:flex-shrink-0 md:flex-grow-0">
+				<a href="/" class="logo">
+					<img
+						loading="lazy"
+						src="/img/logo_baesystems_borderless.svg"
+						alt="BAE System"
+						title="BAE System"
+						width="190"
+						height="30"
+					/>
+				</a>
+				<div class="mt-4 share-price sm:mt-8">
+					<figure class="px-4 py-1 m-0 text-4xl font-normal leading-relaxed bg-black border border-solid border-zinc-700 font-baeRegular">
+						524.20 <span class="text-lg leading-7">GBP</span></figure>
+					<a
+						href="https://investors.baesystems.com/share-price-information/share-monitor"
+						class="block p-4 text-sm leading-5 cursor-pointer text-light hover:text-light"
+					>Go to investor center</a>
+					<description class="block px-4 py-0 text-xs leading-4 text-neutral-400">Data is from the London Stock Exchange and may be delayed by 15 minutes or more</description>
+				</div>
+				<slot name="footerLogo" />
+			</div>
+
+			<div class="w-full px-4 footer__right md:w-2/3">
+				<div class="items-start justify-between -mx-4 row">
+					<div class="relative flex-grow-0 flex-shrink-0 w-full px-4 sm:flex-shrink-0 sm:flex-grow-0 sm:basis-1/4 basis-1/2"><slot name="footer1" /></div>
+					<div class="relative flex-grow-0 flex-shrink-0 w-full px-4 sm:flex-shrink-0 sm:flex-grow-0 sm:basis-1/4 basis-1/2"><slot name="footer2" /></div>
+					<div class="relative flex-grow-0 flex-shrink-0 w-full px-4 sm:flex-shrink-0 sm:flex-grow-0 sm:basis-1/4 basis-1/2"><slot name="footer3" /></div>
+					<div class="relative flex-grow-0 flex-shrink-0 w-full px-4 sm:flex-shrink-0 sm:flex-grow-0 sm:basis-1/4 basis-1/2"><slot name="footer4" /></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="page-footer" class="mt-12 -mx-4 -mb-4 text-sm leading-5 bg-black">
+		<div class="container">
+			<slot name="footerMenu" />
+		</div>
+	</div>
+	<script src="~/assets/js/main.js"></script>
+</footer>

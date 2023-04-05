@@ -1,0 +1,16 @@
+---
+import { getLinkType } from '~/utils'
+const { item = {}} = Astro.props;
+const href = getLinkType(item);
+---
+<div class="flex-col items-center px-2 py-4 m-3 text-center col basis-auto">
+	<div class="text-6xl font-normal leading-none text-center text-primary statistics__value font-baeRegular">{item.statisticsValue}</div>
+	<h4 class="mx-0 mt-6 mb-2 text-xl font-bold leading-7 text-center text-primary statistics__title font-baeBold">{item.statisticsTitle}</h4>
+	<div class="text-sm statistics__description">
+		<Fragment set:html={item?.statisticsDescription} />
+		<a class="mt-5 btn btn-follow btn-outline-secondary" href={href}>
+			{item.statisticsButtonTitle}
+			<i class="icon-follow"></i>
+		</a>
+	</div>
+</div>

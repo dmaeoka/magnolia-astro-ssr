@@ -1,0 +1,31 @@
+---
+import EditableArea from '~/components/magnolia/EditableArea.astro';
+import { getEnv } from '~/utils';
+const { host } = getEnv();
+const { content = {}, annotations = {}, item = {}} = Astro.props;
+const bgImage = item.hasOwnProperty('image') ? `url(${host + item.image['@link']})` : '';
+const areaNodes = [];
+
+for (let i = 1; i <= item.layout; i++) {
+	areaNodes.push(`statisticsList${i}`);
+}
+---
+<section class="py-14 statistics">
+	<div class="container">
+		<div class="justify-between row flex-nowrap">
+			{areaNodes.map(area => (
+				<EditableArea
+					content={content}
+					annotations={annotations}
+					path={item?.['@path']+`/${area}`}
+				/>
+			))}
+		</div>
+	</div>
+</section>
+
+<style lang="scss" define:vars={{ bgImage }}>
+	.statistics {
+		background: var(--bgImage) no-repeat top center;
+	}
+</style>

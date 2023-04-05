@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>accordion-open</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="White-Label" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M14.1176471,15.8823529 L0.882352941,15.8823529 C0.395042868,15.8823529 0,15.4873101 0,15 C0,14.5126899 0.395042868,14.1176471 0.882352941,14.1176471 L14.1176471,14.1176471 L14.1176471,0.882352941 C14.1176471,0.395042868 14.5126899,0 15,0 C15.4873101,0 15.8823529,0.395042868 15.8823529,0.882352941 L15.8823529,14.1176471 L29.1176471,14.1176471 C29.6049571,14.1176471 30,14.5126899 30,15 C30,15.4873101 29.6049571,15.8823529 29.1176471,15.8823529 L15.8823529,15.8823529 L15.8823529,29.1176471 C15.8823529,29.6049571 15.4873101,30 15,30 C14.5126899,30 14.1176471,29.6049571 14.1176471,29.1176471 L14.1176471,15.8823529 Z" id="accordion-open" fill="#6C7077" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>

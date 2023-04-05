@@ -1,0 +1,71 @@
+---
+import { AstroSeo } from '@astrolib/seo';
+// import { GoogleAnalytics } from '@astrolib/analytics';
+// import { getImage } from '@astrojs/image';
+import { MetaSEO } from '~/types';
+import { getAsset, getRelativeUrlByFilePath } from '~/utils';
+
+export interface Props extends MetaSEO {
+	dontUseTitleTemplate?: boolean;
+}
+
+const {
+	title = 'BAE SYSTEMS',
+	description = '',
+	image = '/img/logo_baesystems_borderless.svg',
+	canonical = Astro.url.pathname,
+	noindex = false,
+	nofollow = false,
+	ogTitle = title,
+	ogType = 'website',
+	dontUseTitleTemplate = false,
+} = Astro.props;
+
+// const image = typeof _image === 'string'
+// 	? new URL(_image, Astro.site)
+// 	: _image && typeof _image['src'] !== 'undefined'
+// 	? // @ts-ignore
+// 		new URL(getRelativeUrlByFilePath(_image.src), Astro.site)
+// 	: null;
+const magnoliaCss = import.meta.env.MODE === 'development' ? (`<link rel="stylesheet" type="text/css" href="/styles/magnolia-author.css" media="all" />`) : '';
+---
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<AstroSeo
+	title={title}
+	titleTemplate={dontUseTitleTemplate ? '%s' : `%s — BAE ASTROJS`}
+	description={description}
+	canonical={String(canonical)}
+	noindex={noindex}
+	nofollow={nofollow}
+	openGraph={{
+		url: String(canonical),
+		title: ogTitle,
+		description: description,
+		type: ogType
+	}}
+
+/>
+<!-- Google Site Verification -->
+<!-- {SITE.googleSiteVerificationId && <meta name="google-site-verification" content={SITE.googleSiteVerificationId} />} -->
+
+<!-- Google Analytics -->
+<!-- {SITE.googleAnalyticsId && <GoogleAnalytics id={String(SITE.googleAnalyticsId)} partytown={true} />} -->
+
+<link rel="shortcut icon" href={getAsset('/favicon.ico')} />
+<!-- <link rel="icon" type="image/svg+xml" href={getAsset('/favicon.svg')} /> -->
+<!-- <link rel="mask-icon" href={getAsset('/favicon.svg')} color="#8D46E7" /> -->
+
+<link rel="preload" href="/fonts/baesofie/latin/light/BAESystemsWeb-Light.woff" as="font" type="font/woff" crossorigin="anonymous" />
+<link rel="preload" href="/fonts/baesofie/latin/light/BAESystemsWeb-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" href="/fonts/baesofie/latin/regular/BAESystemsWeb-Regular.woff" as="font" type="font/woff" crossorigin="anonymous" />
+<link rel="preload" href="/fonts/baesofie/latin/regular/BAESystemsWeb-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" href="/fonts/baesofie/latin/bold/BAESystemsWeb-Bold.woff" as="font" type="font/woff" crossorigin="anonymous" />
+<link rel="preload" href="/fonts/baesofie/latin/bold/BAESystemsWeb-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" href="/fonts/icomoon/fonts/baeicons.woff?hq6tm2" as="font" type="font/woff" crossorigin="anonymous" />
+<link rel="preload" href="/fonts/icomoon/fonts/baeicons.ttf?hq6tm2" as="font" crossorigin="anonymous" />
+<link rel="preload" href="/fonts/icons/icon.ttf?g5zk0a" as="font" crossorigin="anonymous" />
+<link rel="preload" href="/fonts/social/icomoon.woff" as="font" type="font/woff" crossorigin="anonymous" />
+<link rel="preload" href="/fonts/social/icomoon.ttf?p9xjp4" as="font" crossorigin="anonymous" />
+<link rel="sitemap" href="/sitemap-index.xml">
+<Fragment set:html={magnoliaCss} />

@@ -1,0 +1,71 @@
+---
+import EditablePage from '~/components/magnolia/EditablePage.astro';
+import EditableArea from '~/components/magnolia/EditableArea.astro';
+import MetaTags from '~/components/common/MetaTags.astro';
+import Header from '~/components/common/Header.astro';
+import Footer from '~/components/common/Footer.astro';
+import '~/assets/styles/base.scss';
+import { MetaSEO } from '~/types';
+export interface Props {
+	meta?: MetaSEO;
+	content?: object;
+	annotation?: object;
+}
+const { meta = {}, content = {}, annotation = {} } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en" dir="ltr" x-data="{}">
+	<head>
+		<MetaTags {...meta} />
+	</head>
+	<body class="font-base text-zinc-700 debug-screens">
+		<EditablePage
+			content={content}
+			templateAnnotations={annotation}
+		/>
+		<div id="page-container">
+			<Header />
+			<div id="page-content" class="mx-auto max-w-screen-2xl">
+				<slot />
+			</div>
+			<Footer>
+				<EditableArea
+					content={content}
+					annotations={annotation}
+					slot="footerLogo"
+					path={content['footerLogo']?.['@path']}
+				/>
+				<EditableArea
+					content={content}
+					annotations={annotation}
+					slot="footer1"
+					path={content['footer1']?.['@path']}
+				/>
+				<EditableArea
+					content={content}
+					annotations={annotation}
+					slot="footer2"
+					path={content['footer2']?.['@path']}
+				/>
+				<EditableArea
+					content={content}
+					annotations={annotation}
+					slot="footer3"
+					path={content['footer3']?.['@path']}
+				/>
+				<EditableArea
+					content={content}
+					annotations={annotation}
+					slot="footer4"
+					path={content['footer4']?.['@path']}
+				/>
+				<EditableArea
+					content={content}
+					annotations={annotation}
+					slot="footerMenu"
+					path={content['footerMenu']?.['@path']}
+				/>
+			</Footer>
+		</div>
+	</body>
+</html>

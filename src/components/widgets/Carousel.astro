@@ -1,0 +1,94 @@
+---
+import { getAreaNodes } from '~/utils';
+const { item = {} } = Astro.props;
+const carousel = item['carousel'] || [];
+let areaNodes = [];
+if (carousel.length > 0) {
+	areaNodes = getAreaNodes(carousel[0]) || [];
+}
+areaNodes.map( (i, index) => {
+	i.imgTablet = `https://picsum.photos/id/${index + 10}/768/400`;
+	i.imgMobile = `https://picsum.photos/id/${index + 10}/576/400`
+	i.imgDesktop = `https://picsum.photos/id/${index + 10}/1600/600`;
+	return i
+});
+
+---
+
+<section
+	id={item?.['@id']}
+	class="relative m-auto overflow-hidden carousel"
+	aria-roledescription="carousel"
+	aria-live="polite"
+	x-data="carousel()">
+	<div
+		class="w-full carousel__items"
+		x-ref="container">
+		{ areaNodes.map( (i, index) => (
+			<div
+				class="relative h-full carousel__item"
+				data-index={index}
+				role="group"
+				aria-roledescription="slide"
+				aria-hidden="false">
+				<picture>
+					<source
+						media="(max-width: 576px)"
+						srcset={i.imgMobile} />
+					<source
+						media="(max-width: 768px)"
+						srcset={i.imgTablet} />
+					<source
+						srcset={i.imgDesktop} />
+					<img
+						class="absolute top-0 left-0 object-fill w-full h-full max-w-none"
+						src={i.imgDesktop}
+						alt=""
+						width="1600"
+						height="600"
+					/>
+				</picture>
+				<div class="container z-10 h-full carousel__container">
+					<div class="flex flex-col items-start justify-center h-full max-w-screen-md p-8 text-white carousel__content">
+						<div class="text-base pre-title font-baeRegular">{i?.pretitle}</div>
+						<h2 class="my-5 text-6xl break-words title font-baeRegular"><Fragment set:html={i?.description} /></h2>
+						<a
+							href="#"
+							class="mt-5 btn btn-light"
+							id="asd">
+							{i.bannerButton.label}
+							<i class="icon-follow"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		))}
+	</div>
+
+	<div class="container">
+		<div
+			class="flex absolute right-0 flex-col py-1 px-0 text-xs leading-5 text-left text-white bg-neutral-700 bg-opacity-[0.85] z-20 bottom-11"
+			aria-controls="carousel"
+		>
+			<a class="relative px-3 py-1 text-white cursor-pointer controller-item active before:absolute before:block before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1 before:bg-primary before:h-3/5" data-index="1" style="max-width: 44ch;">
+				<span>AUKUS submarines</span>
+			</a>
+			<a class="relative px-3 py-1 text-white cursor-pointer controller-item active opacity-60" data-index="2" style="max-width: 44ch;">
+				<span>Careers at BAE Systems</span>
+			</a>
+			<a class="relative px-3 py-1 text-white cursor-pointer controller-item active opacity-60" data-index="3" style="max-width: 44ch;">
+				<span>2022 Full-year results</span>
+			</a>
+			<a class="relative px-3 py-1 text-white cursor-pointer controller-item active opacity-60" data-index="4" style="max-width: 44ch;">
+				<span>Fifth Astute submarine delivered</span>
+			</a>
+		</div>
+	</div>
+</section>
+
+<style lang="scss">
+	.carousel__items {
+		height: 600px;
+	}
+</style>
+<!-- absolute -translate-x-1/2 carousel__image left-1/2 -->

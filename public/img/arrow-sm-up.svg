@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="11px" height="8px" viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow-sm-up</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="White-Label" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M10.1561962,0.87072326 L5.26989164,5.75702781 C5.16760134,5.85931811 5.06531257,5.85931811 4.96302227,5.75702781 L0.0767177255,0.87072326 C-0.0255725752,0.768432959 -0.0255725752,0.666144193 0.0767177255,0.563853892 L1.56385389,-0.923282274 C1.66614419,-1.02557258 1.76843296,-1.02557258 1.87072326,-0.923282274 L5.11645696,2.33425409 L8.36219065,-0.923282274 C8.46448096,-1.02557258 8.56676972,-1.02557258 8.66906002,-0.923282274 L10.1561962,0.563853892 C10.1955386,0.618933285 10.2152095,0.670077668 10.2152095,0.717288576 C10.2152095,0.764499484 10.1955386,0.815643867 10.1561962,0.87072326 Z" id="arrow-sm-up" fill="#6C7077" sketch:type="MSShapeGroup" transform="translate(5.107605, 3.257813) scale(1, -1) translate(-5.107605, -3.257813) "></path>
+    </g>
+</svg>

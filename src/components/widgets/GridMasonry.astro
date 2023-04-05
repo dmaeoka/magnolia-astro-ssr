@@ -1,0 +1,46 @@
+---
+const { item = {} } = Astro.props;
+const cells = [1,2,3,4,5,6,7,8];
+const message = 'hello world';
+---
+<section id={item?.['@id']}>
+	<div class="container">
+		<div class="grid grid-cols-2 gap-4 py-10">
+			{cells.map(item => {
+				const src = `https://picsum.photos/id/${(item + 20)}/585/480`;
+				return (
+					<div class="flex flex-col w-full">
+						<div class="relative overflow-hidden">
+							<picture>
+								<img
+									{src}
+									class="w-full"
+									width="585"
+									height="480"
+									alt="Describe the image"
+									loading="lazy" />
+							</picture>
+						</div>
+						<div class="relative z-20 flex flex-col items-start mx-8 -mt-8 bg-white border-t-2 border-primary p-7">
+							<h3 class="mb-2 text-2xl leading-normal font-baeBold">Women in BAE Systems</h3>
+							<div class="text-base leading-6 font-baeBold">Helping to increase gender diversity across our global organisation.</div>
+							<a class="mt-5 btn btn-follow btn-outline-primary" href="#">How we are helping<i class="icon-follow"></i></a>
+						</div>
+					</div>
+				)
+			})}
+		</div>
+	</div>
+
+	<ul id="macy-container">
+		<li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla sequi aut suscipit sapiente repellendus iure blanditiis iusto repudiandae quas dolores similique debitis aliquam cumque dolore, minus nostrum eveniet, ullam officia.</li>
+		<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni praesentium aperiam accusamus nobis pariatur. Distinctio, incidunt eveniet provident nobis dicta iure impedit sequi consequatur molestias nemo repellat doloribus soluta ut.</li>
+		<li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente corrupti aliquam error vel aliquid! Dolore et harum nesciunt sapiente temporibus, vitae optio ipsa laudantium veritatis architecto, rem fugit facere cumque.</li>
+		<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quod reprehenderit similique aut ratione dolorum impedit praesentium, eos atque suscipit ipsam, ab magni? Sit placeat eveniet, aspernatur delectus exercitationem sint.</li>
+		<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit illum beatae suscipit in veritatis necessitatibus repellendus ab consequatur, quidem magni, adipisci excepturi omnis hic similique eveniet quibusdam eum modi odio?</li>
+	</ul>
+</section>
+
+<script define:vars={{ message }}>
+	console.log(message);
+</script>

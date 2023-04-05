@@ -1,0 +1,47 @@
+---
+import EditableArea from '~/components/magnolia/EditableArea.astro';
+const { content = {}, annotations = {}, item = {}} = Astro.props;
+let { layout, gutter, wideLayout, margin = '', padding = '', cssClasses = '' } = item;
+const classList = ['container'];
+const gridClassList = ['grid', 'grid-cols-12', margin, padding, cssClasses];
+let areaId = `column1`;
+const listOfAreas = [];
+
+if (wideLayout) {
+	classList.push('container--wide');
+}
+
+if(gutter) {
+	gridClassList.push('gap-4');
+}
+
+if (layout !== '12x1') {
+	layout = layout.split('x');
+	for (let i = 0; i < layout.length; i++) {
+		listOfAreas.push(`col-span-full md:col-span-${layout[i]}`)
+	}
+} else {
+	listOfAreas.push('col-span-full');
+}
+
+---
+<section id={item?.['@id']}>
+	<div class:list={classList}>
+		<div class:list={gridClassList}>
+			{ listOfAreas.map( (node, index) => {
+				if (node) {
+					areaId = `column${(index + 1)}`;
+					return (
+						<div class:list={[node]}>
+							<EditableArea
+								content={content}
+								annotations={annotations}
+								path={item?.['@path']+`/${areaId}`}
+							/>
+						</div>
+					)
+				}
+			}) }
+		</div>
+	</div>
+</section>

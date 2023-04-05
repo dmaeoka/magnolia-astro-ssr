@@ -1,0 +1,23 @@
+---
+const { item = {} } = Astro.props;
+const { instagram = '#', facebook = '#', youtube = '#', linkedin = '#', twitter = '#' } = item;
+---
+<div id={item?.['@id']} class="h-auto mt-8">
+	<ul class="flex justify-around w-full max-w-screen-sm px-0 py-6 m-0 social-bar__list">
+		<li>
+			<a href={twitter} rel="nofollow" target="_blank" class="social-icon twitter">Twitter</a>
+		</li>
+		<li>
+			<a href={facebook} rel="nofollow" target="_blank" class="social-icon facebook">facebook</a>
+		</li>
+		<li>
+			<a href={linkedin} rel="nofollow" target="_blank" class="social-icon linkedin">linkedin</a>
+		</li>
+		<li>
+			<a href={instagram} rel="nofollow" target="_blank" class="social-icon instagram">instagram</a>
+		</li>
+		<li>
+			<a href={youtube} rel="nofollow" target="_blank" class="social-icon youtube">youtube</a>
+		</li>
+	</ul>
+</div>

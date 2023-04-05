@@ -1,0 +1,5 @@
+---
+const { item = {} } = Astro.props;
+const richText = item?.editHTML;
+---
+<Fragment id={item?.['@id']} set:html={richText} />

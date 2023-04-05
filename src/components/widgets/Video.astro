@@ -1,0 +1,52 @@
+---
+import { getLinkType } from '~/utils'
+const { item = {} } = Astro.props;
+const { videoItem = [] } = item;
+const href = getLinkType(item);
+let videoButton;
+if(href && item.buttonTitle) {
+	videoButton = `<a class="mt-5 btn btn-follow btn-primary" href="${href}">${item?.buttonTitle} <i class="icon-follow"></i></a>`;
+}
+---
+<!-- <a href="#" class="absolute flex items-center justify-center w-16 h-16 text-2xl leading-9 bg-white rounded-full text-primary top-1/2 left-1/2">
+	<span class="font-icons icon-play before:ml-1"></span>
+</a> -->
+
+{ videoItem.map( node => (
+	<div class="grid grid-cols-12 grid-rows-6 pl-4" id={node?.['@id']}>
+		<div class="relative z-10 col-start-2 row-start-1 row-end-7 col-span-full">
+			<a href="#" class="video-grid__trigger">
+				<i class="font-icons icon-play before:ml-1"></i>
+			</a>
+			<picture>
+				<img
+					src="https://picsum.photos/1100/620"
+					width="1100"
+					height="620"
+					class="aspect-[16/9]"
+					alt="Describe the image"
+					loading="lazy" />
+			</picture>
+		</div>
+		<div class="relative z-20 flex flex-col justify-around col-start-1 col-end-7 row-start-1 row-end-7 flex-nowrap">
+			<div class="flex flex-col items-start w-full p-8 bg-white shadow-lg" style="max-width: 350px;">
+				<div class="tagline">{node.videoTagline}</div>
+				<h3 class="relative my-4 text-3xl font-bold media__title font-baeBold before:block before:w-1 before:h-full before:bg-light before:absolute before:-left-8 ">{node.videoTitle}</h3>
+				<div class="text-sm media__summary">
+					<Fragment set:html={node?.videoSummary} />
+				</div>
+				<Fragment set:html={videoButton} />
+			</div>
+		</div>
+		<div class="hidden col-start-2 row-start-1 row-end-7 col-span-full">
+			<iframe
+				loading="lazy"
+				class="w-full aspect-[16/9] brightcoveplayer optanon-category-C0001"
+				src={node.videoUrl}
+				allowfullscreen=""
+				width="1100"
+				height="620"
+				allow="encrypted-media; autoplay"></iframe>
+		</div>
+	</div>
+))}

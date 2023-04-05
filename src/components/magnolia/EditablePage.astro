@@ -1,0 +1,10 @@
+---
+export interface Props {
+	content?: object;
+	templateAnnotations?: object;
+}
+import EditableComment from './EditableComment.astro';
+const {content, templateAnnotations } = Astro.props;
+const pageComment = templateAnnotations[content?.['@path']];
+---
+<EditableComment annotation={pageComment}></EditableComment>

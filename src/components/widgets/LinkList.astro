@@ -1,0 +1,12 @@
+---
+import EditableArea from '~/components/magnolia/EditableArea.astro';
+const { content = {}, annotations = {}, item = {}} = Astro.props;
+---
+<h4 class="m-0 text-sm leading-loose uppercase text-neutral-400 font-baeRegular">{item?.subtitle}</h4>
+<ul id={item?.['@id']}>
+	<EditableArea
+		content={content}
+		annotations={annotations}
+		path={item?.['@path']+'/linkList'}
+	/>
+</ul>

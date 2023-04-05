@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="25px" height="30px" viewBox="0 0 25 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>shield</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path id="path-1" d="M12.0958889,0 L0,2.12041216 L0,18.6631397 C0,19.9363451 0.598395038,21.3114196 1.78178321,22.7519586 C2.83081729,24.0261219 4.31608336,25.3309418 6.19570047,26.6306523 C8.54237395,28.2474666 10.9346139,29.4516946 12.0958889,30 C13.2591743,29.4516946 15.6514142,28.2477859 17.9974176,26.6306523 C19.8783749,25.3312612 21.3609606,24.0264413 22.4093246,22.7519586 C23.5937179,21.3098229 24.1941232,19.9366644 24.1941232,18.6631397 L24.1941232,2.12041216 L12.0958889,0 Z"></path>
+    </defs>
+    <g id="White-Label" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="shield">
+            <use fill="#6C7077" fill-rule="evenodd" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+            <use fill="none" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

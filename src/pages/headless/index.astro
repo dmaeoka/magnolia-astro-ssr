@@ -1,0 +1,28 @@
+---
+import EditableArea from '~/components/magnolia/EditableArea.astro';
+import Layout from '~/layouts/Layout.astro';
+import pkg from '@magnolia/template-annotations';
+import { getEnv } from '~/utils';
+
+global.mgnlInPageEditor = true;
+const { pages, templates, lang} = getEnv();
+const selectedLang = lang.filter(item => item === 'en')[0];
+const headers = {'Accept-Language': selectedLang};
+const { TemplateAnnotations, PersonalizationService } = pkg;
+const pagesContent = await fetch(pages, {headers}).then((r) => r.json());
+const annotation = pagesContent ? await fetch(templates + pagesContent?.['@path'], {headers}).then((r) => r.json()) : {};
+const wrappedContent = TemplateAnnotations.generateMissingAreas(pagesContent,annotation);
+const content = PersonalizationService.getVariant(wrappedContent, annotation);
+const meta = {
+	title: content?.['windowTitle'] || undefined,
+	description: content?.['description'] || undefined,
+	dontUseTitleTemplate: true,
+}
+---
+<Layout {meta} {annotation} {content}>
+	<EditableArea
+		content={content}
+		annotations={annotation}
+		path={content["main"]?.["@path"]}
+	/>
+</Layout>

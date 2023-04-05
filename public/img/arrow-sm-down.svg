@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="11px" height="7px" viewBox="0 0 11 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow-sm-down</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="White-Label" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M10.2152095,1.71728858 C10.2152095,1.76449948 10.1955386,1.81564387 10.1561962,1.87072326 L5.26989164,6.75702781 C5.16760134,6.85931811 5.06531257,6.85931811 4.96302227,6.75702781 L0.0767177255,1.87072326 C-0.0255725752,1.76843296 -0.0255725752,1.66614419 0.0767177255,1.56385389 L1.56385389,0.0767177255 C1.66614419,-0.0255725752 1.76843296,-0.0255725752 1.87072326,0.0767177255 L5.11645696,3.33425409 L8.36219065,0.0767177255 C8.46448096,-0.0255725752 8.56676972,-0.0255725752 8.66906002,0.0767177255 L10.1561962,1.56385389 C10.1955386,1.61893328 10.2152095,1.67007767 10.2152095,1.71728858 L10.2152095,1.71728858 Z" id="arrow-sm-down" fill="#6C7077" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>

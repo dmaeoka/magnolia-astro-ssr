@@ -1,0 +1,13 @@
+---
+import { getLinkType } from '~/utils'
+const { item = {} } = Astro.props;
+const href = getLinkType(item);
+let rel = '';
+if (item.linkType === 'external') {
+	rel = 'nofollow';
+}
+
+---
+<li id={item?.['@id']}>
+	<a {href} {rel} class="block py-1 text-sm leading-5 text-light hover:text-light hover:underline"><Fragment set:text={item.title} /></a>
+</li>

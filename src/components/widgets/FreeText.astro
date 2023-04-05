@@ -1,0 +1,51 @@
+---
+import { getEnv } from '~/utils';
+const { host } = getEnv();
+const { item = {} } = Astro.props;
+const { align = 'left', background = '', margin = '', padding = '', cssClasses = '' } = item;
+const bgImage = item.hasOwnProperty('image') ? `url(${host + item.image['@link']})` : '';
+const title = [item?.title];
+const cssClassesList = [];
+const freeTextClassList = [];
+if (cssClasses.length > 0) {
+	cssClassesList.push(...item.cssClasses.split(" "));
+}
+
+if(background !== '') {
+	if (background.includes('black')) {
+		freeTextClassList.push('bg-black', 'text-white', 'after:bg-gray-1000');
+	}
+	if (background.includes('white')) {
+		freeTextClassList.push('bg-white', 'after:bg-white');
+	}
+}
+
+if (align === 'centre') {
+	cssClassesList.push('items-center');
+	cssClassesList.push('text-center');
+}
+
+if(align === 'right') {
+	cssClassesList.push('items-end');
+	cssClassesList.push('text-right');
+}
+
+const classList = [margin, padding, ...cssClassesList];
+---
+
+<div class:list={freeTextClassList} class="relative bg-center bg-no-repeat bg-cover free-text after:block after:top-0 after:left-0 after:w-full after:h-full after:absolute after:z-0 after:bg-opacity-40">
+	<div class="container">
+		<div class:list={classList} class="relative flex-col h-full col bg-opacity-10">
+			<div class="relative z-10">
+				{title.map(node => <h3 class="mb-2 text-3xl font-medium freetext__title font-baeBold"><Fragment set:html={node} /></h3>)}
+				<Fragment set:html={item?.desc} />
+			</div>
+		</div>
+	</div>
+</div>
+
+<style lang="scss" define:vars={{ bgImage }}>
+	.free-text {
+		background-image: var(--bgImage);
+	}
+</style>

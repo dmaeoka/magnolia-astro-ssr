@@ -1,0 +1,18 @@
+---
+export interface Props {
+	content?: object;
+	annotations?: object;
+	path: string;
+}
+import EditableComment from './EditableComment.astro';
+import EditableComponent from './EditableComponent.astro';
+import { getAreaNodes, getContentByPath } from '~/utils';
+const { content, annotations, path } = Astro.props;
+let comment = Object.keys(annotations).includes(path) ? annotations[path] : '';
+comment = comment.includes('cms:area') ? comment : '';
+const areaContent = getContentByPath(content, path);
+const areaNodes = getAreaNodes(areaContent) || [];
+---
+<EditableComment annotation={comment}>
+{areaNodes.map(item => (<EditableComponent content={content} annotations={annotations} item={item} />))}
+</EditableComment>

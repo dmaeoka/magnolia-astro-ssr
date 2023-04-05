@@ -1,0 +1,28 @@
+---
+interface Props {
+	annotation: string;
+}
+const isDev = import.meta.env.MODE === 'development';
+// const mgnlPreview = Astro.url.searchParams.get('mgnlPreview') || undefined;
+let { annotation } = Astro.props;
+let commentOpen = '';
+let commentClose = '';
+if (isDev && annotation && annotation.includes('cms:')) {
+	commentOpen = `<!-- ${annotation} -->`;
+	if (annotation.includes('page')) {
+		commentClose = '<!-- /cms:page -->';
+	}
+	if(annotation.includes('area')) {
+		commentClose = '<!-- /cms:area -->';
+	}
+
+	if(annotation.includes('component')) {
+		// fixt the grid/flex issue
+		commentOpen += '<div>';
+		commentClose = '</div><!-- /cms:component -->';
+	}
+}
+---
+<Fragment set:html={commentOpen} />
+<slot/>
+<Fragment set:html={commentClose} />

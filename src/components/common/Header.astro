@@ -1,0 +1,66 @@
+---
+import { getAreaNodes, getEnv } from '~/utils';
+const { nav } = getEnv();
+const navigationPages = await fetch(nav).then((r) => r.json());
+const areaNodes = getAreaNodes(navigationPages) || [];
+---
+<div
+	id="page-top-items"
+	class="relative z-30 bg-white shadow"
+	data-module="pageTopItems"
+	aria-hidden="false"
+	style="--tw-shadow: 0 0 3px #d0d3d4">
+	<div class="container px-0 leading-5">
+		<ul class="flex flex-row items-start justify-end p-0 my-0 ml-0" aria-hidden="false">
+			<li class="border-l border-solid border-light">
+				<a
+					href="/en/cybersecurity/home"
+					tabindex="0"
+					aria-hidden="false"
+					class="block px-5 py-2 text-sm leading-6 cursor-pointer hover:text-primary focus:text-primary">Digital Intelligence</a>
+			</li>
+			<li class="border-solid border-x border-light">
+				<a
+					href="/en/contactus"
+					tabindex="0"
+					aria-hidden="false"
+					class="block px-5 py-2 text-sm leading-6 cursor-pointer hover:text-primary focus:text-primary">Contact us</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div
+	id="page-navigation"
+	data-module="pageNavigation"
+	aria-hidden="false"
+	class="relative z-10 w-full bg-white shadow"
+	style="--tw-shadow: 0 0 3px #d0d3d4"
+	x-data="navbar()">
+	<div class="container">
+		<nav role="navigation" class="row">
+			<ul>
+				<li class="w-12 mr-1">
+					<a href="#" class="menu">Menu</a>
+				</li>
+			</ul>
+			<ul role="menubar" class="hidden md:row flex-nowrap">
+				{ areaNodes.map(item => (
+					<li class="flex flex-col items-stretch">
+						<a href={item?.['@path']} title={item?.['title']} class="navigation-link">
+							<span>{item?.['title']}</span>
+						</a>
+					</li>
+				))}
+			</ul>
+			<a href="/" class="logo">
+				<img
+					src="/img/logo_baesystems_borderless.svg"
+					alt="BAE Systems"
+					width="190"
+					height="30"
+					title="BAE Systems"/>
+			</a>
+		</nav>
+	</div>
+</div>

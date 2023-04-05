@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="2px" viewBox="0 0 30 2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>accordion-close</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="White-Label" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M29.1176471,1.76470588 C29.6049571,1.76470588 30,1.36966301 30,0.882352941 C30,0.395042868 29.6049571,0 29.1176471,0 L0.882352941,0 C0.395042868,0 0,0.395042868 0,0.882352941 C0,1.36966301 0.395042868,1.76470588 0.882352941,1.76470588 L29.1176471,1.76470588 Z" id="accordion-close" fill="#6C7077" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>
